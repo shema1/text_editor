@@ -9,14 +9,21 @@
       </button>
       <button class="control-panel__btn" @click="clearAll">Clear all</button>
     </div>
-    <div class="control-panel__store-status">
-      <span v-if="localStore" @click="store" class="material-icons">
-        check_box
-      </span>
-      <span v-else @click="store" class="material-icons">
-        check_box_outline_blank
-      </span>
-      <span>Save text to local storage</span>
+
+    <div class="options">
+      <div class="options__color">
+        <label for="head">color</label>
+        <input type="color"  name="head" v-model="color" />
+      </div>
+      <div class="options__store">
+        <span v-if="localStore" @click="store" class="material-icons">
+          check_box
+        </span>
+        <span v-else @click="store" class="material-icons">
+          check_box_outline_blank
+        </span>
+        <span>Save text to local storage</span>
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +31,11 @@
 <script>
 export default {
   name: "ControlPanel",
+  data() {
+    return {
+      color: "#e66465",
+    };
+  },
   props: {
     btnStatus: {
       type: Boolean,
@@ -34,7 +46,7 @@ export default {
   },
   methods: {
     changeColor() {
-      let newColor = { color: "red" };
+      let newColor = { color: this.color };
       this.$emit("changeColor", newColor);
     },
     changeFont() {
@@ -42,7 +54,7 @@ export default {
       this.$emit("changeFont", newFont);
     },
     changeBG() {
-      let newBG = { bg: "pink" };
+      let newBG = { bg: this.color };
       this.$emit("changeBG", newBG);
     },
     toJSON() {
@@ -96,11 +108,22 @@ export default {
     cursor: pointer;
     background-position: right center;
   }
-  &__store-status {
-    font-size: 18px;
-    margin-top: 25px;
+}
+.options {
+  font-size: 24px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+  &__store{
     display: flex;
     align-items: center;
   }
+  input{
+    margin-left: 15px;
+  }
+  
 }
 </style>
