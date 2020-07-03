@@ -1,5 +1,5 @@
 # text_editor
-
+ preview https://confident-swartz-a2505f.netlify.app/
 ## Project setup
 ```
 npm install
