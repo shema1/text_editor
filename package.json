@@ -10,6 +10,8 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "fast-equals": "^2.0.0",
+    "sass": "^1.26.9",
+    "sass-loader": "^9.0.0",
     "vue": "^2.6.11",
     "vue-fragment": "^1.5.1"
   },

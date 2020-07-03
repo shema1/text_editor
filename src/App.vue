@@ -3,12 +3,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import TextEditor from "./components/TextEditor.vue"
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
     TextEditor,
   }
 }
