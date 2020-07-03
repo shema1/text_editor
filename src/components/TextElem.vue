@@ -1,5 +1,6 @@
 <template>
   <span
+  title="double click to edit"
     @mousedown="start()"
     @mouseup="end()"
     @dblclick="editText"
@@ -84,5 +85,6 @@ export default {
 
 span {
   border-radius: 8px;  
+  cursor: pointer;
 }
 </style>
